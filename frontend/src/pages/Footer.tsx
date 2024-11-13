@@ -125,7 +125,6 @@ export default function  Footer()  {
                     </div>
                     </div>
                 )}
-
             
                 <ul className="mt-8 flex flex-col items-center justify-center space-y-5 sm:flex-row sm:space-x-4 sm:space-y-0">
                     {footerNavs.map((item, idx) => (

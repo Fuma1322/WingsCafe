@@ -31,7 +31,7 @@ function App() {
       } catch (error) {
         console.log(error);
 
-        navigate("/landing")
+        navigate("/login")
         return
       }
 
@@ -42,7 +42,7 @@ function App() {
         const token = localStorage.getItem("token") || ''
 
         if(!token){
-          navigate("/landing")
+          navigate("/login")
           return
         }else{
 
