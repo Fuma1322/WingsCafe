@@ -10,16 +10,10 @@ import ShowAndPrintModel from './ShowAndPrint.model'
 
 const TableCard = ({ data, id }: any) => {
 
-
-
     const [DeleteConsumer, DeleteConsumerResponse] = useDeleteOrderMutation()
-    
-
     const [visible, setVisible] = useState(false);
 
-
     const deleteHandler =async (_id: string) => {
-
 
         try {
             // console.log(e)
@@ -76,14 +70,12 @@ const TableCard = ({ data, id }: any) => {
                 <td className="px-6 py-4">
                     {data?.consumer?.email}   
 
-                  
-
                 </td>
                 <td className="px-6 py-4">
                     <ul>
                             {
                                 data.items.length>0 && data.items.map((cur:any,i:number)=>{
-                                    return <li key={i}>{cur?.name} - &#8377;{cur?.price}/-</li>
+                                    return <li key={i}>{cur?.name} M{cur?.price}</li>
                                 })
                             }
                     </ul>

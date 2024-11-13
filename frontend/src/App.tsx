@@ -8,10 +8,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setUser, UserSlicePath } from './provider/slice/user.slice'
 
 function App() { 
-  const [loading, SetLoading] = useState(true)
-  const navigate= useNavigate() 
-      const dispatch = useDispatch()
-      const selector = useSelector(UserSlicePath)
+
+  const [loading, SetLoading] = useState(true);
+  const navigate= useNavigate();
+  const dispatch = useDispatch();
+  const selector = useSelector(UserSlicePath);
 
   const fetchUser = async(token:string) => {
       try {
@@ -30,22 +31,22 @@ function App() {
       } catch (error) {
         console.log(error);
 
-        navigate("/login")
+        navigate("/landing")
         return
       }
 
   }
   
   useEffect(() => {
+
         const token = localStorage.getItem("token") || ''
 
         if(!token){
-          navigate("/login")
+          navigate("/landing")
           return
         }else{
 
           if (selector?.email){
-
             SetLoading(false)
             return 
           }else{ 
@@ -54,12 +55,10 @@ function App() {
             })()
           }
         }
-
   }, [])
 
-
   if (loading){
-      return <div>loading....</div>
+    return <div>loading....</div>
   }
 
   return (

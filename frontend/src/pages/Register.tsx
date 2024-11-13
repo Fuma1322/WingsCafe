@@ -73,7 +73,9 @@ const Register = () => {
         {({ values, setFieldValue, handleSubmit }) => (
           <>
             <form onSubmit={handleSubmit} className="w-[96%] md:w-[70%] lg:w-1/3 shadow-md rounded-md pt-10 pb-3 px-4 bg-white">
-            
+              <h1 className="text-3xl text-gray-800 font-extrabold mx-auto md:text-4xl flex justify-center py-4">
+                Register Form
+              </h1>
               <div className="mb-3 py-1">
                 <label htmlFor="name">Name</label>
                 <Field id='name' name='name' className='w-full outline-none py-3 px-2 border-[.1px] border-zinc-400 rounded-lg' placeholder='Enter Email Address' />
@@ -99,12 +101,12 @@ const Register = () => {
                 />
               </div>
               <div className="mb-3 py-1">
-                <Button disabled={!values.token} loading={registerUserResponse.isLoading} raised type='submit'   className='w-full bg-red-500 text-white py-3 px-2 flex items-center justify-center'>Submit
-
+                <Button disabled={!values.token} loading={registerUserResponse.isLoading} raised type='submit' className='w-full flex items-center justify-center gap-x-2 py-2 px-4 text-white font-medium bg-gray-800 duration-150 hover:bg-gray-700 active:bg-gray-900 rounded-lg md:inline-flex'>
+                  Submit
                 </Button>
               </div>
-              <div className="mb-3 py-1 flex items-center justify-end">
-                <p className="inline-flex items-center gap-x-1">   Already Have An Account?<Link className='font-semibold' to={'/login'}>Login</Link></p>
+              <div className="mb-3 py-1 flex items-center justify-start">
+                <p className="inline-flex items-center gap-x-1"> Already Have An Account?<Link className='font-semibold' to={'/login'}>Login</Link></p>
               </div>
               
             </form>

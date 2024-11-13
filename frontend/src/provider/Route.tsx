@@ -7,6 +7,7 @@ import ErrorPage from "../pages/Error";
 import Invoice from "../pages/Invoice";
 import UserPage from "../pages/Users";
 import OrdersPage from "../pages/Orders";
+import LandingPage from "../pages/LandingPage";
 
 export const Routes = createBrowserRouter([
     {
@@ -35,6 +36,11 @@ export const Routes = createBrowserRouter([
                 Component: ErrorPage
             }
         ]
+    },
+    {
+        path: '/landing',
+        Component: LandingPage,
+        
     },
     {
         path: '/login',
