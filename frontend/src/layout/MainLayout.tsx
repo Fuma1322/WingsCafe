@@ -16,12 +16,12 @@ const MainLayout = ({ children }:{children:React.ReactNode}) => {
     <>
       <div className="flex items-start lg:gap-x-2">
         <Sidebar collapsed={selector.collapsed} breakPoint="lg" toggled={selector.toggle} >
-          <Menu>
+          <Menu className='bg-white'>
             <MenuItem className="lg:hidden" onClick={() => dispatch(toggleSidebar())} > {selector.toggle ? <IoIosArrowDropright className="text-2xl" />:<IoIosArrowDropleft className="text-2xl" />} </MenuItem>
             <MenuItem component={<Link to="/landing" />} icon={<FiHome  className="text-2xl" />} > Home </MenuItem>
             <MenuItem component={<Link to="/" />} icon={<MdOutlineSpaceDashboard  className="text-2xl" />} > Dashboard </MenuItem>
-            <MenuItem component={<Link to="/orders" />} icon={<FiBox className="text-2xl" />}> Orders </MenuItem>
             <MenuItem component={<Link to="/user" />} icon={<FiUser className="text-2xl" />} > Users </MenuItem>
+            <MenuItem component={<Link to="/orders" />} icon={<FiBox className="text-2xl" />}> Orders </MenuItem>
           </Menu>
         </Sidebar>
           <div className="w-full">

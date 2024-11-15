@@ -34,11 +34,9 @@ function App() {
         navigate("/login")
         return
       }
-
   }
   
   useEffect(() => {
-
         const token = localStorage.getItem("token") || ''
 
         if(!token){
@@ -58,7 +56,7 @@ function App() {
   }, [])
 
   if (loading){
-    return <div>loading....</div>
+    return <div></div>
   }
 
   return (
@@ -66,7 +64,6 @@ function App() {
 
         <Header />
         <MainLayout>
-
         <Outlet />
         </MainLayout>
      

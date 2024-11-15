@@ -11,7 +11,6 @@ const TableCard = ({ data, id }:any) => {
     const [DeleteConsumer, DeleteConsumerResponse] = useDeleteConsumerMutation()
 
     const [visible, setVisible] = useState(false) ;
-   
 
     const deleteHandler = (_id: string) => {
         confirmDialog({
@@ -60,9 +59,9 @@ const TableCard = ({ data, id }:any) => {
                   {data.mobile}
               </td>
               <td className="px-6 py-4">
-                  <button onClick={() => setVisible(!visible)} title="View " className="p-4 bg-teal-500 text-white rounded-sm mx-2"><LuView className="text-xl" /> </button>
-                  <button onClick={() => setVisible(!visible)}  title="Edit " className="p-4 bg-orange-400 text-white rounded-sm mx-2"><FaRegEdit className="text-xl" /> </button>
-                  <Button loading={DeleteConsumerResponse.isLoading} onClick={() => deleteHandler(data._id)} title="delete " className="p-4 bg-red-500 text-white rounded-sm mx-2"><FaRegTrashAlt className="text-xl" /> </Button>
+                  <button onClick={() => setVisible(!visible)} title="View" className="p-4 text-white rounded-sm mx-2"><LuView className="text-xl text-green-500" /> </button>
+                  <button onClick={() => setVisible(!visible)}  title="Edit" className="p-4 text-white rounded-sm mx-2"><FaRegEdit className="text-xl text-orange-400" /> </button>
+                  <Button loading={DeleteConsumerResponse.isLoading} onClick={() => deleteHandler(data._id)} title="delete " className="p-4 text-white rounded-sm mx-2"><FaRegTrashAlt className="text-xl text-red-600" /> </Button>
               </td>
           </tr>
           <UpdateModel visible={visible} setVisible={setVisible} _id={data._id} />

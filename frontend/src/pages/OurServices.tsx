@@ -4,17 +4,17 @@ const services = [
   {
     icon: <LayoutDashboard className="h-16 w-16" />,
     description: "Dashboard",
-    href: "#",
+    href: "/",
   },
   {
     icon: <ListOrdered className="h-16 w-16" />,
     description: "Orders",
-    href: "#",
+    href: "/orders",
   },
   {
     icon: <User className="h-16 w-16" />,
     description: "Users",
-    href: "#",
+    href: "/user",
   },
   {
     icon: <Blocks className="h-16 w-16" />,

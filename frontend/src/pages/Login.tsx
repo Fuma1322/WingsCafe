@@ -46,7 +46,7 @@ const navigate = useNavigate()
       if (data && data.token) {
         localStorage.setItem("token", data.token);
         resetForm();
-        navigate("/");
+        navigate("/landing");
       } else {
         toast.error('Login failed. Please try again.');
       }
@@ -57,7 +57,6 @@ const navigate = useNavigate()
     }
   };
   
-
   return (
 
     <>

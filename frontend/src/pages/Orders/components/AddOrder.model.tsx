@@ -99,7 +99,6 @@ const AddOrderModel = ({ visible, setVisible }: any) => {
 
   return (
     <>
-    
           <Dialog draggable={false} header="Add Order" position='top' visible={visible} className=" w-full md:w-[70%] lg:w-[60%]" onHide={() => setVisible(false)}>
 
               <Formik onSubmit={onSubmitHandler} initialValues={initialValues} validationSchema={validationSchema}>
@@ -108,7 +107,6 @@ const AddOrderModel = ({ visible, setVisible }: any) => {
                           <form onSubmit={handleSubmit} className="w-full" >
                               <div className="mb-3">
                                   <label htmlFor="name">User <span className="text-red-500 text-sm">*</span> </label> 
-
                                   <Dropdown value={values.user} onChange={(e) => setFieldValue('user', e.value)} filterBy='name' options={data && data.users} filterPlaceholder='Search User By Name' optionLabel="user" placeholder="Select a User"
                                   emptyFilterMessage="No User Found"
                                   emptyMessage="You Have No User"
@@ -120,58 +118,41 @@ const AddOrderModel = ({ visible, setVisible }: any) => {
                               <div className="mb-3">
                                   <label htmlFor="name">Items <span className="text-red-500 text-sm">*</span> </label>
                                         <FieldArray name='items'>
-                                                        {({ push,remove })=>(
-                                                                    <>
-                                        <div className="mb-3 flex justify-end">
-                                                  <button type='button' onClick={() => { push({name:'',price:''})}} className='bg-purple-500 px-4  text-white py-2 rounded-md'>Add +</button>
-                                        </div>
-                                                                                {
-                                                  values.items.length>0 &&  values.items.map((_,i)=>{
-                                                            
-
-                                                            return<div className='w-full flex items-center justify-between gap-x-4' key={i}>
-                                                                            <div className="w-1/2">
+                                            {({ push,remove })=>(
+                                                <>
+                                                    <div className="mb-3 flex justify-end">
+                                                        <button type='button' onClick={() => { push({name:'',price:''})}} className='bg-gray-800 px-4 text-white py-2 rounded-md'>Add +</button>
+                                                    </div>
+                                                    {
+                                                    values.items.length>0 &&  values.items.map((_,i)=>{
+                                                        return  <div className='w-full flex items-center justify-between gap-x-4' key={i}>
+                                                            <div className="w-1/2">
                                                                     <Field name={`items[${i}].name`} className="w-full my-2 border outline-none py-3 px-4" placeholder="Item Name" />
-                                                                    {/* <ErrorMessage name={`items[${i}].name`} className='text-red-500 capitalize' component={'p'} /> */}
-
-
-                                                                            </div>
+                                                                {/* <ErrorMessage name={`items[${i}].name`} className='text-red-500 capitalize' component={'p'} /> */}
+                                                                </div>
                                                                 <div className="w-1/2">
                                                                     <Field type="number" name={`items[${i}].price`} className="w-full my-2 border outline-none py-3 px-4" placeholder="Item Price" />
                                                                     {/* <ErrorMessage name={`items[${i}].price`} className='text-red-500 capitalize' component={'p'} /> */}
-
                                                                 </div>
                                                                 <div className="">
                                                                     <button onClick={() => { remove(i)}} type='button' className="px-3 py-3 rounded-full bg-black text-white"><FaTrashAlt/></button>
                                                                 </div>
                                                             </div>
-                                                  })  
-                                                                                }
+                                                        })  
+                                                    }
 
-                                                                    </>           
-                                                        )}
-
+                                                </>           
+                                            )}
                                         </FieldArray>
- 
-
                                   <ErrorMessage name='items' className='text-red-500 capitalize' component={'p'} />
-                              </div>
-
-
-
-
-
-                                          
+                              </div>        
                               <div className="flex justify-end">
-                                  <Button  className="text-white px-5 rounded-sm bg-indigo-500 py-3 text-center ">Add Consumer</Button>
+                                  <Button  className="text-white px-5 rounded-md bg-gray-800 py-3 text-center ">Add Consumer</Button>
                               </div>
-
                           </form>
                       </>
                   )}
-
               </Formik>
-
           </Dialog> 
     </>
   )

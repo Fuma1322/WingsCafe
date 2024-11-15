@@ -82,11 +82,11 @@ const TableCard = ({ data, id }: any) => {
                     {/* {data.mobile} */}
                 </td>
                 <td className="px-6 py-4">
-                    <button onClick={() => setVisible(!visible)} title="View " className="p-4 bg-teal-500 text-white rounded-sm mx-2"><BsPrinter className="text-xl" /> </button>
+                    <button onClick={() => setVisible(!visible)} title="View " className="p-4 text-white rounded-sm mx-2"><BsPrinter className="text-xl text-green-700" /> </button>
                     {/* <button onClick={() => setVisible(!visible)} title="Edit " className="p-4 bg-orange-400 text-white rounded-sm mx-2"><FaRegEdit className="text-xl" /> </button> */}
                     <Button 
                     loading={DeleteConsumerResponse.isLoading}
-                     onClick={() => deleteHandler(data._id)} title="delete " className="p-4 bg-red-500 text-white rounded-sm mx-2"><FaRegTrashAlt className="text-xl" /> </Button>
+                     onClick={() => deleteHandler(data._id)} title="delete " className="p-4 text-white rounded-sm mx-2"><FaRegTrashAlt className="text-xl text-red-500" /> </Button>
                 </td>
             </tr>
             {/* <UpdateModel visible={visible} setVisible={setVisible} _id={data._id} /> */}

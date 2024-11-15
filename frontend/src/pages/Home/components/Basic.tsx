@@ -63,7 +63,7 @@ export default function BasicChart() {
 
 
     return ( 
-            <Chart type="bar" width='' className=' w-full lg:w-1/2 ' data={chartData} options={chartOptions} />
+        <Chart type="line" width='' className=' w-full lg:w-1/2 ' data={chartData} options={chartOptions} />
     
     )
 }

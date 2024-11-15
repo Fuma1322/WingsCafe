@@ -7,7 +7,7 @@ const ErrorHandling = require("./middlewares/ErrorHandler");
 
 // Allow requests only from your frontend URL
 app.use(cors({
-  origin: 'https://wings-cafe-b4dd.vercel.app', // Frontend URL
+  origin: 'http://localhost:5173', // Frontend URL
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, // Set to true if you're using cookies or auth headers
 }));

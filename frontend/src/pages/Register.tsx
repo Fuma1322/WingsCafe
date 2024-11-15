@@ -40,31 +40,21 @@ const Register = () => {
 
         try {
           const {data,error }:any = await registerUser(e)
-       
-          
               if(error){
                 toast.error(error.data.message);
-                return
-                
+                return 
               }
 
               console.log(data,error);
-
-
               localStorage.setItem("token",data.token);
-
-              
-
           resetForm()
-          navigate("/")
+          navigate("/login")
         } catch (error:any) {
             // toast
-          toast.error(error.message);
-              
+          toast.error(error.message);   
           }finally{
           RecaptchaRef.current.reset();
           }
-        
   }
 
   return (
